@@ -372,7 +372,7 @@ COPY --link --from=editorconfig-checker /usr/bin/ec /usr/bin/editorconfig-checke
 COPY --link --from=revive /usr/bin/revive /usr/bin/revive
 COPY --link --from=kubeconform /kubeconform /usr/bin/
 COPY --link --from=chktex /usr/bin/chktex /usr/bin/
-COPY --link --from=stylua /stylua /usr/bin/stylua
+COPY --link --from=stylua /stylua /usr/bin/
 COPY --link --from=protolint /usr/local/bin/protolint /usr/bin/
 COPY --link --from=dustilock /usr/bin/dustilock /usr/bin/dustilock
 COPY --link --from=gitleaks /usr/bin/gitleaks /usr/bin/
@@ -683,7 +683,7 @@ RUN wget --quiet https://github.com/pmd/pmd/releases/download/pmd_releases%2F${P
 # selene installation
 #
 # stylua installation
-# Managed with COPY --link --from=stylua /stylua /usr/bin/stylua
+# Managed with COPY --link --from=stylua /stylua /usr/bin/
 #
 # perlcritic installation
     && curl -fsSL https://raw.githubusercontent.com/skaji/cpm/main/cpm | perl - install -g --show-build-log-on-failure --without-build --without-test --without-runtime Perl::Critic \

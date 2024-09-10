@@ -136,7 +136,7 @@ ENV PATH="/node-deps/node_modules/.bin:${PATH}" \
 #############################################################################################
 
 #COPY__START
-COPY --link --from=stylua /stylua /usr/bin/stylua
+COPY --link --from=stylua /stylua /usr/bin/
 #COPY__END
 
 #############################################################################################
@@ -152,7 +152,7 @@ RUN wget --tries=5 https://www.lua.org/ftp/lua-5.3.5.tar.gz -O - -q | tar -xzf -
 
 #
 # stylua installation
-# Managed with COPY --link --from=stylua /stylua /usr/bin/stylua
+# Managed with COPY --link --from=stylua /stylua /usr/bin/
 #
 #OTHER__END
 

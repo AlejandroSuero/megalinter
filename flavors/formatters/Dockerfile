@@ -171,7 +171,7 @@ ENV PATH="/node-deps/node_modules/.bin:${PATH}" \
 
 #COPY__START
 COPY --link --from=shfmt /bin/shfmt /usr/bin/
-COPY --link --from=stylua /stylua /usr/bin/stylua
+COPY --link --from=stylua /stylua /usr/bin/
 COPY --link --from=terragrunt /bin/terraform /usr/bin/
 #COPY__END
 
@@ -206,7 +206,7 @@ RUN curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.4.2/po
     && dotnet tool install -g roslynator.dotnet.cli \
 #
 # stylua installation
-# Managed with COPY --link --from=stylua /stylua /usr/bin/stylua
+# Managed with COPY --link --from=stylua /stylua /usr/bin/
 #
 # powershell_formatter installation
     && pwsh -c 'Install-Module -Name PSScriptAnalyzer -RequiredVersion ${PSSA_VERSION} -Scope AllUsers -Force'
