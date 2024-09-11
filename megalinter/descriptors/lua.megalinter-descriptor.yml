@@ -111,12 +111,12 @@ linters:
       - "stylua --check myfile.lua"
       - "stylua --config-path chktexrc.toml --check myfile.lua"
     install:
-      cargo:
-        - stylua@${STYLUA_VERSION}
       dockerfile:
         - |-
-          # renovate: datasource=crate depName=stylua
-          ARG STYLUA_VERSION=0.20.0
+          # renovate: datasource=github-releases depName=JohnnyMorganz/StyLua
+          ARG LUA_STYLUA_VERSION=0.20.0
+        - FROM johnnymorganz/stylua:${LUA_STYLUA_VERSION} AS stylua
+        - COPY --link --from=stylua /stylua /usr/bin/
     ide:
       neovim:
         - name:
