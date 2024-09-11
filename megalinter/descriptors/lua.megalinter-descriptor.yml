@@ -106,6 +106,7 @@ linters:
     cli_config_arg_name: "--config-path"
     cli_version_arg_name: "-V"
     cli_help_arg_name: "--help"
+    cli_lint_fix_arg_name: ""
     cli_lint_extra_args:
       - "--check"
     examples:
